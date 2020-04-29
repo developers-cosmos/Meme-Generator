@@ -8,6 +8,7 @@ The understanding of working of this project will require you to understand a fe
     2. Oversampling
     3. Image Augmentation 
     4. Convolutional Neural Networks
+    5. Auto ML
 
 It is little wonder that there was a huge image dataset playing its part behind the scenes. Image datasets brings in the importance of CNN with it. If you are new to the term, keep reading! 
 
@@ -58,4 +59,4 @@ In addition to this, we've also used the following in building **MemeGen:**
 
 To know what the above terms mean and do, please visit our ["Covid19 Feedback Application"](https://developers-cosmos.github.io/COVID19-FeedbackApplication/) repository where we have explained it clearly in detail. 
 
-Any suggestions are welcome. Thanks a ton! :D
+## Any suggestions are welcome. Thanks a ton! :D
