@@ -1,7 +1,6 @@
 # Meme-Generator (MemeGen)
 
 MemeGen is a web application which generates memes automatically. All the user has to do is to upload a picture and MemeGen will take it from there giving you amusing memes written on the image. 
-________________________
 
 ## How it works:
 The understanding of working of this project will require you to understand a few fancy terms such as:
@@ -18,7 +17,7 @@ It is little wonder that there was a huge image dataset playing its part behind 
 
 First off, let us understand the importance of **good data** and more importantly, a **balanced data**. In simple terms, balanced data is a case where we have equal or almost equal data for all the available classes. 
 
-> <img align ="centre" width="400" height="200" src="3.jpg">
+> <img align ="left" src="images/3.jpg" width="400" height="200" >
 
 
 ### ***So what happens if they aren't equal?***
@@ -26,7 +25,7 @@ First off, let us understand the importance of **good data** and more importantl
 The possible answer to that question is that your model will end up being crappy, credits to the dataset! This happens because.. when you train a model with 1000 images of Class A and 300 images of Class B, quite evidently, the model sees more of Class A and when you show it an image of Class B and ask it to predict, chances are, it will predict the image to be A reasons being obvious. If this doesn't seem very likely, imagine a model trying to strike a balance between 10 classes with data for each class varying humongously (10000, 800, 350, 500...). 
 
 
-><img align ="centre" width="350" height="220" src="2.jpg"> 
+><img align ="left" width="350" height="220" src="images/2.jpg"> 
 
 ### Now the question is, how do we overcome this problem? 
 
@@ -40,7 +39,8 @@ Moral of the story, oversampling and undersampling in data analysis are techniqu
 
 ### **Image Augmentation:**
 Image augmentation is a technique that is used to artificially expand the dataset. This is helpful when we are given a dataset with very few data samples. It can be considered as a method of oversampling the main difference being, Augmentation is done when you don't have enough data on the whole (for all classes combined), whereas oversampling is a technique used when you don't have enough data in one class. 
-> <img align ="centre" width="400" height="230" src="4.jpg">
+
+> <img align ="left" width="400" height="230" src="images/4.jpg">
 -----------
 Now that we have enough data and are ready to build a model, which procedure do you think would give us the best output? Combination of deep learning and images immediately rings a familiar bell in our minds, absolutely, Convolutional Neural Networks!
 
@@ -48,7 +48,8 @@ Now that we have enough data and are ready to build a model, which procedure do 
 
 ## **Convolutional Neural Networks (CNN):**
 As the name suggests, CNN works quite similar to how the neurons of a human brain work. Have you ever paid keen attention to how our mind identifies people, objects and the other worldly things? It happens so swiftly that most of us never even give a second thought to it. When we see an image, we scan the image to understand the different features of the image. Our mind then combines the different local features that we scanned in order to classify the image. This is exactly how CNN also works. It takes an image, breaks it down into several equal parts and analyses it followed by overlapping the comprehended results of each such part. 
-> <img align ="centre" width="400" height="230" src="6.jpg">
+
+> <img align ="left" width="400" height="230" src="images/6.jpg">
 
 
 CNN can be understood by clearly associating it with two important elements:
@@ -69,7 +70,8 @@ This was just a brief on CNN, it actually seems simple but in reality involves a
 
 ## **Auto ML:**
 As you can guess, Auto ML is the process of automatically training a Machine Learning model and finding the best possible model when a dataset is provided. 
-> <img align ="centre" width="400" height="230" src="7.jpg">
+
+> <img align ="left" width="400" height="230" src="images/7.jpg">
 
 In our case, we used 3 different datasets to get the best end results.
 
