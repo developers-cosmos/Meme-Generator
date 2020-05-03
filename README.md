@@ -1,6 +1,6 @@
 # Meme-Generator (MemeGen)
 
-MemeGen is a web application which generates memes automatically. All the user has to do is to upload a picture and MemeGen will take it from there giving you amusing memes written on the image. 
+MemeGen is a web application which generates memes automatically according to the given image. All the user has to do is upload a clear picture, and our application analyses the expression of the person in the image producing amusing memes. The user also has an option of downloading the image from the webpage. 
 
 ## How it works:
 The understanding of working of this project will require you to understand a few fancy terms such as:
@@ -100,4 +100,5 @@ In addition to this, we've also used the following in building **MemeGen:**
 
 To know what the above terms mean and do, please visit our ["Covid19 Feedback Application"](https://developers-cosmos.github.io/COVID19-FeedbackApplication/) repository where we have explained it clearly in detail. 
 
+### Hope you enjoyed MemeGen!
 ## Any suggestions are welcome. Thanks a ton! :D
