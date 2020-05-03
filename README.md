@@ -80,6 +80,7 @@ In our case, we used 3 different datasets to get the best end results.
 * _Second dataset:_ Pictures of faces Indian actors 
 * _Third dataset:_ Images of faces of famous personalities
 
+Here is an example of how it works:
 >| Accuracies| Japanese (A) | Actors (B) | Famous Personalities (C)|
 >|----------|----------|--------|----------------------|
 >| **Sad**  |     60%  |   50%  |      25%             |
