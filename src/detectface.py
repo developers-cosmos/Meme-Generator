@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 
-# pro processing image for model
+# pre processing image for model
 
 def detectface(img):
     face_cascade = cv2.CascadeClassifier('facedetection/haarcascade_frontalface_default.xml') 
