@@ -1,0 +1,37 @@
+{
+  "name": "MemeGen",
+  "description": "Installs/Configures MemeGen",
+  "long_description": "Installs/Configures MemeGen",
+  "maintainer": "ritheesh",
+  "maintainer_email": "bunnyrb4@gmail.com",
+  "license": "All Rights Reserved",
+  "platforms": {
+
+  },
+  "dependencies": {
+
+  },
+  "providing": {
+    "MemeGen::application": ">= 0.0.0",
+    "MemeGen": ">= 0.0.0"
+  },
+  "recipes": {
+    "MemeGen::application": "",
+    "MemeGen": ""
+  },
+  "version": "1.0.0",
+  "source_url": "",
+  "issues_url": "",
+  "privacy": false,
+  "chef_versions": [
+    [
+      ">= 14.0"
+    ]
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "revision_id": "3fb3615fcf51b4802e090ad3e52e3c5d3cd3d1cb38deb6c962ca1849bc120760",
+  "name": "MemeGen",
+  "run_list": [
+    "recipe[MemeGen::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "MemeGen": {
+      "version": "1.0.0",
+      "identifier": "9598b0e6d048774533289027e01a117be5858cbc",
+      "dotted_decimal_identifier": "42107657083963511.19478022703276058.19223829384380",
+      "source": "../cookbooks/MemeGen",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "86b0020987d4dd1668d7da8fec554b4d3619ca9b",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/MemeGen"
+      }
+    }
+  },
+  "default_attributes": {
+    "MemeGen": {
+      "web_server": {
+        "new_directory": "/MemeGen",
+        "git_url": "https://github.com/developers-cosmos/Meme-Generator",
+        "repo_name": "Meme-Generator",
+        "port": 5000,
+        "username": "vagrant",
+        "conf_path": "/etc/systemd/system/memegen.service"
+      }
+    }
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "MemeGen",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "MemeGen (1.0.0)": [
+
+      ]
+    }
+  }
+}

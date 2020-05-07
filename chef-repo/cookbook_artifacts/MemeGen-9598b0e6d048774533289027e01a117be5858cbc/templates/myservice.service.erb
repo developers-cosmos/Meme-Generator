@@ -1,0 +1,14 @@
+[Unit]
+Description=Simplified Flask Service
+After=syslog.target
+
+[Service]
+Type=simple
+User=<%= @username %>
+WorkingDirectory=/FeedbackApp-<%= @instance_name %>
+ExecStart=/bin/bash -c 'sudo python3 -u /MemeGen/server.py <%= @port%>'
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.targeti
