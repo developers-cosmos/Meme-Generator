@@ -113,3 +113,4 @@ To know what the above terms mean and do, please visit our ["Covid19 Feedback Ap
 
 ### Hope you enjoyed MemeGen!
 ## Any suggestions are welcome. Thanks a ton! :D
+
