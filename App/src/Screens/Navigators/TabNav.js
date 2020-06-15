@@ -1,6 +1,7 @@
 import React,{memo} from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import {useTheme} from '@react-navigation/native';
 
 import {HomeStackScreen,CreditStackScreen,DetailStackScreen,
 SettingStackScreen
@@ -10,10 +11,12 @@ const Tab = createMaterialBottomTabNavigator();
 
 
 function TabNav() {
+  const theme = useTheme();
   return (
      <Tab.Navigator
       initialRouteName="MemeGen"
-      activeColor="#fff"
+      activeColor={theme.dark?'#222':"#fff"}
+      inactiveColor={theme.dark?'#444':'#dcd5e6'}
     >
       <Tab.Screen
         name="MemeGen"
@@ -31,7 +34,7 @@ function TabNav() {
         component={CreditStackScreen}
         options={{
           tabBarLabel: 'Credits',
-          tabBarColor:'#6c5ce7',
+          tabBarColor:'#00b894',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="gift" color={color} size={26} />
           ),
@@ -42,7 +45,7 @@ function TabNav() {
         component={DetailStackScreen}
         options={{
           tabBarLabel: 'Profile',
-          tabBarColor:'#00b894',
+          tabBarColor:'#6c5ce7',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="account" color={color} size={26} />
           ),

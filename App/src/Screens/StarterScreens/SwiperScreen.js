@@ -1,11 +1,14 @@
 import React,{memo} from 'react';
-import { Text, View, StyleSheet, Image ,Button,Dimensions,TouchableOpacity} from 'react-native';
+import {Image , View, StyleSheet,Dimensions,TouchableOpacity,} from 'react-native';
+import {Text, useTheme} from 'react-native-paper';
+
 import Swiper from 'react-native-swiper';
 
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 
 function SwiperScreen({navigation}) {
+  const {colors} = useTheme();
   return (
     <View style={styles.container}>
     <Animatable.View 
@@ -105,7 +108,7 @@ function SwiperScreen({navigation}) {
     </Swiper>
     </Animatable.View>
     <View style={styles.mainFooter}>
-      <Animatable.Text style={styles.title}
+      <Animatable.Text style={[styles.title,{color:colors.text}]}
       animation='fadeInUp'
       >
       Lets Generate Memes With MemeGen!</Animatable.Text>
@@ -117,7 +120,7 @@ function SwiperScreen({navigation}) {
           style={styles.signIn}
         >
           <Text 
-          style={styles.textSign}>Login</Text>
+          style={[styles.textSign,{color:colors.background}]}>Login</Text>
         </LinearGradient>
       </TouchableOpacity>
       </Animatable.View>

@@ -1,18 +1,22 @@
 import React,{memo} from 'react';
 import { 
-  Text,
   View,
   StyleSheet,
-  Image ,
-  Button,
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
+import { 
+  Text,
+  Image ,
+  Button,
+  useTheme,
+} from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 
 function SplashScreen({navigation}) {
+  const {colors} = useTheme();
   return (
     <View style={styles.container}>
      <View style={styles.header}>
@@ -23,13 +27,13 @@ function SplashScreen({navigation}) {
         resizeMode="stretch"
       />
      </View>
-     <Animatable.View style={styles.footer}
+     <Animatable.View style={[styles.footer,{backgroundColor:colors.background}]}
      animation="fadeInUpBig"
      >
-     <Animatable.Text style={styles.title}
+     <Animatable.Text style={[styles.title,{color:colors.text}]}
       animation='fadeInDown'>
       Welcome!</Animatable.Text>
-      <Animatable.Text style={styles.title}
+      <Animatable.Text style={[styles.title,{color:colors.text}]}
       animation='fadeInDown'
       >
       Ready for some hilarious action?</Animatable.Text>
@@ -43,10 +47,10 @@ function SplashScreen({navigation}) {
           style={styles.signIn}
         >
           <Text 
-          style={styles.textSign}>Let's Get Started</Text>
+          style={[styles.textSign,{color:colors.background}]}>Let's Get Started</Text>
           <MaterialCommunityIcons
             name="chevron-right"
-            color="#fff"
+            color={colors.background}
             size={20}
           />
         </LinearGradient>

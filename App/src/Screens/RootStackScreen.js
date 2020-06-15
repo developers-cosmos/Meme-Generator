@@ -20,7 +20,6 @@ const RootStackScreen=()=>(
         <RootStack.Screen name="VerifyAuth" component={VerifyAuth}/>
         <RootStack.Screen name="TabNav" component={TabNav}/>
         <RootStack.Screen name="AuthLoadingScreen" component={AuthLoadingScreen}/>
-        
     </RootStack.Navigator>
 );
 

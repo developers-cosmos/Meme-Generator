@@ -1,5 +1,6 @@
 import React,{ useRef } from 'react';
-import { Text, View, StyleSheet,TouchableOpacity, Image ,Button,Platform,ActivityIndicator,TextInput,DeviceEventEmitter} from 'react-native';
+import { View, StyleSheet, Image,TouchableOpacity ,TextInput,Button,Platform,DeviceEventEmitter} from 'react-native';
+import { Text,ActivityIndicator,useTheme} from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
 import {Feather } from '@expo/vector-icons';
@@ -11,6 +12,8 @@ import {
 
 
 function VerifyAuth({navigation,route}) {
+  const {colors} = useTheme();
+  const theme = useTheme();
     const { verificationId,displayName } = route.params;
   const [code, setCode] = React.useState("");
   const [loading, setLoading] = React.useState(false);
@@ -44,26 +47,26 @@ function VerifyAuth({navigation,route}) {
   return (
     <View style={styles.container}>
     <View style={styles.header}>
-      <Text style={styles.text_header}>Hello Memer!</Text>
+      <Text style={[styles.text_header,{color:colors.background}]}>Hello Memer!</Text>
     </View>
-    <Animatable.View style={styles.footer}
+    <Animatable.View style={[styles.footer,{backgroundColor:colors.background}]}
       animation="fadeInUpBig"
     >
     <Animatable.View
       animation="fadeInLeftBig"
     >
-      <Text style={[styles.text_footer,{marginTop: 30}]}>Enter OTP</Text>
+      <Text style={[styles.text_footer,{marginTop: 30,color:colors.text}]}>Enter OTP</Text>
       <View style={styles.action}>
         <FontAwesome
           name="lock"
-          color="#05375a"
+          color={colors.text}
           size={25}
         />
         <TextInput
           placeholder="Enter OTP"
           onChangeText={setCode}
         returnKeyType="done"
-        style={styles.textInput}
+        style={[styles.textInput,{color:colors.text}]}
         keyboardType="phone-pad"
         maxLength={6}
         />
@@ -77,7 +80,7 @@ function VerifyAuth({navigation,route}) {
         {loading ? (
           <DotIndicator color="#fff" />
         ) : (
-          <Text style={[styles.textSign,{color:'#fff'}]}>SUBMIT</Text>
+          <Text style={[styles.textSign,{color:colors.background}]}>SUBMIT</Text>
         )}
         </LinearGradient>
       </TouchableOpacity>

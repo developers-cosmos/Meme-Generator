@@ -1,5 +1,7 @@
 import React,{ memo,useRef } from 'react';
-import { Text, View, StyleSheet, Image,TouchableOpacity ,Button,Platform,ActivityIndicator,TextInput,DeviceEventEmitter} from 'react-native';
+import { View, StyleSheet, Image,TouchableOpacity ,TextInput,Button,Platform,DeviceEventEmitter} from 'react-native';
+import { Text,ActivityIndicator,useTheme} from 'react-native-paper';
+
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
 import {Feather } from '@expo/vector-icons';
@@ -9,8 +11,11 @@ import { FirebaseRecaptchaVerifierModal } from "expo-firebase-recaptcha";
 import {
   SkypeIndicator,
 } from 'react-native-indicators';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 function PhoneAuthScreen({navigation}) {
+  const {colors} = useTheme();
+  const theme = useTheme();
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [loading, setLoading] = React.useState(false);
@@ -42,25 +47,25 @@ function PhoneAuthScreen({navigation}) {
   return (
     <View style={styles.container}>
     <View style={styles.header}>
-      <Text style={styles.text_header}>Hello Memer!</Text>
+      <Text style={[styles.text_header,{color:colors.background}]}>Hello Memer!</Text>
     </View>
-    <Animatable.View style={styles.footer}
+    <Animatable.View style={[styles.footer,{backgroundColor:colors.background}]}
     animation="fadeInUpBig"
     >
     <Animatable.View
     animation="fadeInLeftBig"
     >
-      <Text style={styles.text_footer}>Name</Text>
+      <Text style={[styles.text_footer,{color:colors.text}]}>Name</Text>
       <View style={styles.action}>
         <FontAwesome
           name="user-o"
-          color="#05375a"
+          color={colors.text}
           size={25}
         />
         <TextInput
           placeholder="Your Name"
           onChangeText={setName}
-          style={styles.textInput}
+          style={[styles.textInput,{color:colors.text}]}
         />
         {name.length>7?
         (<Feather
@@ -75,16 +80,16 @@ function PhoneAuthScreen({navigation}) {
     <Animatable.View
     animation="fadeInRightBig"
     >
-      <Text style={[styles.text_footer,{marginTop: 30}]}>Phone no.</Text>
+      <Text style={[styles.text_footer,{marginTop: 30,color:colors.text}]}>Phone no.</Text>
       <View style={styles.action}>
         <FontAwesome
           name="phone"
-          color="#05375a"
+          color={colors.text}
           size={25}
         />
         <TextInput
           placeholder="Phone Number"
-          style={styles.textInput}
+          style={[styles.textInput,{color:colors.text}]}
           onChangeText={setPhone}
           returnKeyType="done"
           keyboardType="phone-pad"
@@ -111,7 +116,7 @@ function PhoneAuthScreen({navigation}) {
         {loading ? (
           <SkypeIndicator color="#fff" />
         ) : (
-          <Text style={[styles.textSign,{color:'#fff'}]} >Send OTP</Text>
+          <Text style={[styles.textSign,{color:colors.background}]} >Send OTP</Text>
         )}
         </LinearGradient>
       </TouchableOpacity>

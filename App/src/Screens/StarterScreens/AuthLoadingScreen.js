@@ -1,5 +1,6 @@
 import React, { memo } from "react";
-import { ActivityIndicator,View,StyleSheet} from "react-native";
+import { View,StyleSheet} from "react-native";
+import {useTheme} from 'react-native-paper';
 import firebase from "../../Config/config";
 import "firebase/auth";
 import {
@@ -16,9 +17,10 @@ const AuthLoadingScreen = ({ navigation }) => {
         navigation.navigate("SplashScreen");
       }
     });
+    const theme = useTheme()
     return (
       <View style={styles.container}>
-          <PacmanIndicator color="red" />
+          <PacmanIndicator color={theme.dark?"#222":"#fff"} />
       </View>
       );
     };
@@ -29,6 +31,7 @@ const AuthLoadingScreen = ({ navigation }) => {
       container: {
         flex: 1,
         alignItems: 'center', 
-        justifyContent: 'center' 
+        justifyContent: 'center',
+        backgroundColor: '#079992',
       },
     });

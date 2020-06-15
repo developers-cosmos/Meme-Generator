@@ -1,5 +1,6 @@
 import React, {memo, useEffect } from 'react';
-import { Text, View, StyleSheet, Image ,Button,BackHandler, Alert} from 'react-native';
+import {  View, StyleSheet,BackHandler, Alert,StatusBar} from 'react-native';
+import { Text, Image ,Button} from 'react-native-paper';
 
 function HomeScreen({navigation}) {
   useEffect(() => {
@@ -25,6 +26,7 @@ function HomeScreen({navigation}) {
 
   return (
     <View style={styles.container}>
+    <StatusBar />
       <Text>Home Screen</Text>
     </View>
   );
