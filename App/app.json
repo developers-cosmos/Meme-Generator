@@ -19,7 +19,8 @@
         "mp4",
         "otf",
         "xml"
-      ]
+      ],
+      "sourceExts": ["js", "jsx", "svg", "svgx"]
     },
     "ios": {
       "supportsTablet": true
