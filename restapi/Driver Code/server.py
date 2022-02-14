@@ -355,5 +355,5 @@ def upload_file():
         }
         return render_template('memslide.html', image=result_dic)
 
-app.run(host='0.0.0.0',debug=True)
+app.run(host='0.0.0.0')
 
