@@ -20,5 +20,5 @@ class image(Resource):
         return {'status':lists}
 api.add_resource(image,'/api')
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run()
 
