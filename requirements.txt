@@ -1,6 +1,6 @@
 Flask==1.0
 Werkzeug==0.16.0
 tensorflow==2.7.2
-numpy==1.21.0
+numpy==1.22.0
 opencv_python==4.2.0.32
 
