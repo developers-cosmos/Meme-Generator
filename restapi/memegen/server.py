@@ -1,5 +1,6 @@
 import os
 import random
+import shutil
 from datetime import datetime
 
 import numpy as np
@@ -12,7 +13,7 @@ import tensorflow as tf
 app = Flask(__name__)
 
 # Configuration
-app.config["UPLOAD_FOLDER"] = os.getenv("UPLOAD_FOLDER", "./static")
+app.config["UPLOAD_FOLDER"] = os.path.join(os.getenv("UPLOAD_FOLDER", "./static"), "inputs")
 app.config["RESULTS_FOLDER"] = os.path.join(app.config["UPLOAD_FOLDER"], "results")
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
@@ -115,6 +116,13 @@ def save_image_with_logo(image_path, result_path):
     Image1copy.save(result_path)
 
 
+def cleanup_folder(folder):
+    for filename in os.listdir(folder):
+        file_path = os.path.join(folder, filename)
+        if os.path.isfile(file_path) and file_path.lower().endswith(('.png', '.jpg', '.jpeg')):
+            os.unlink(file_path)
+
+
 @app.route("/")
 def index():
     return render_template("memslide.html")
@@ -122,6 +130,10 @@ def index():
 
 @app.route("/", methods=["POST"])
 def upload_file():
+    # Clean up previous files
+    cleanup_folder(app.config["UPLOAD_FOLDER"])
+    cleanup_folder(app.config["RESULTS_FOLDER"])
+
     file = request.files.get("photo")
     if file and allowed_file(file.filename):
         now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
