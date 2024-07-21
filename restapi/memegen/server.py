@@ -283,7 +283,7 @@ def text_alignment(label, im):
             im = cv2.cvtColor(np.array(pil_im), cv2.COLOR_RGB2BGR)
         return im
     except Exception as e:
-        print(e)
+        print(f"Exception: {e}")
         img = cv2.imread("static/dontdelete/wrong.jpg")
         img = cv2.resize(img, (300, 300))
         return img
