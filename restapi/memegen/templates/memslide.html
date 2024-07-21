@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="description" 
+      content="MemeGen is a web application which generates memes automatically according to the given image. All the user has to do is upload a clear picture, and our application analyses the expression of the person in the image producing amusing memes. The user also has an option of downloading the image from the webpage." />
+      <meta name="keywords" content="Meme Generator, Dynamic Meme Generator, AI Meme generator, Best meme generator,ML meme generator,Best animated Website,Animated Website" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <title>MemeGen</title>
+      <link rel="shortcut icon" href="{{ url_for('static', filename='images/MemeGen.png') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/component1.css') }}" />
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/memslide.css') }}" type="text/css">
+      <link href="{{ url_for('static', filename='css/bootstrap-tour-standalone.min.css')}}" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body style="background-color: black;">
+    <a id="bookmark-this" class="github icon-bookmark" href="#" title="Bookmark This Page"></a>
+    <div  id="birds" class="container-fluid" style="height:80%">
+      <img id="logo" src="{{ url_for('static',filename='images/memeG.png') }}" class="img-responsive" style="width:160px">
+      <section id="slider" >
+        <input type="radio" name="slider" id="s1">
+        <input type="radio" name="slider" id="s2">
+        <input type="radio" name="slider" id="s3" checked>
+        <input type="radio" name="slider" id="s4">
+        <input type="radio" name="slider" id="s5">
+        <label for="s1" id="slide1">
+          <img  src="{{ url_for('static',filename='images/meme.jpeg') }}" class="img-responsive">
+        </label>
+        <label for="s2" id="slide2" >
+          <img  src="{{ url_for('static',filename='images/meme1.jpg') }}"  class="img-responsive">
+          </label>
+        <label for="s3" id="slide3" >
+          <img  id="tr"src="{{ url_for('static',filename='images/meme5.jpeg') }}"  class="img-responsive">
+         </label>
+        <label for="s4" id="slide4" >
+          <img src="{{ url_for('static',filename='images/meme3.jpg') }}" class="img-responsive">
+          </label>
+        <label for="s5" id="slide5" >
+          <img src="{{ url_for('static',filename='images/meme4.jpg') }}"  class="img-responsive">
+          </label>
+      </section>
+      </div>
+  <div class="container-fluid"id="net" style="height:100%;display:flex;justify-content: center;align-items: center;">
+  {% if not image %}
+    <div class="card" id="meme">
+    <form method="POST" enctype="multipart/form-data" class="form-group mt-2" id="myForm" action="/" >
+     <div class="note"><br><br>Note:MemeGen application works on images consisting of just one person's face. To have fun, upload clear images and try to submit pictures with different expressions. Refer the slider for the type of images to be uploaded.
+        Hope you enjoy it!</div>
+      <input type="file" class="btn btn-primary btn-md mt-2" name="photo" required>
+      <button type="submit" class="more" title="Generate Meme">Generate Meme</button>
+      <div class="caution"><br>Caution:Dont upload sensitive content we are not responsible
+      </div>
+    </form>
+		<div class="liquid"></div>
+    </div>
+    {% else %}
+    <div class="card-1" id="meme">
+      <form class="form-group mt-2"  >
+       <div class="c-image"><img src="{{ url_for('static',filename=image['im']) }}" class="img-responsive"></div>  
+        <button type="submit" class="more-1" title="Generate Meme"><a style="color:white"href="/">Generate More</a></button>
+        <button type="submit" class="more-1" title="Download"><a style="color:white" download href="{{ url_for('static',filename=image['im']) }}" title="Download">Download</a></button>
+    </form>
+    
+      <div class="liquid"></div>
+      </div>
+  {% endif %}
+
+    <div class="component">
+      <!-- Start Nav Structure -->
+      <button class="cn-button" id="cn-button">=</button>
+      <div class="cn-wrapper" id="cn-wrapper">
+          <ul>
+            <li><a href=" https://developers-cosmos.github.io/Meme-Generator/"  title="Documentation"><span class="icon-file"></span></a></li>
+            <li><a href=" https://github.com/developers-cosmos/Meme-Generator"  title="Github Source Code"><span class="icon-github"></span></a></li>
+            <li><a href=" https://github.com/developers-cosmos/Meme-Generator/issues/new"  title="Issues"><span class="icon-warning-sign"></span></a></li>
+            <li><a href="mailto:developerscosmos6@gmail.com" title="Contact us"><span class="icon-envelope"></span></a></li>
+           </ul>
+           
+      </div>
+      
+      <div id="cn-overlay" class="cn-overlay"></div>
+      <!-- End Nav Structure --> 
+    </div>
+  </div>
+  
+      <script src="{{ url_for('static', filename='js/three.r95.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/vanta.bird.min.js') }}"></script>
+<script>
+VANTA.BIRDS({
+  el: "#birds",
+  mouseControls: true,
+  touchControls: true,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  birdSize: 1,
+  separation: 42.00,
+  alignment: 11.00,
+  backgroundColor: 0x0
+})
+</script>
+<script src="{{ url_for('static', filename='js/vanta.halo.min.js') }}"></script>
+<script>
+VANTA.HALO({
+  el: "#net",
+  mouseControls: true,
+  touchControls: true,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  baseColor: 0x0,
+  backgroundColor: 0x0,
+  size: 1
+})
+</script>
+<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/addtohomescreen.js') }}"></script>
+<script src="{{ url_for('static', filename='js/polyfills.js') }}"></script>
+<script src="{{ url_for('static', filename='js/demo1.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-tour-standalone.min.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+var tour = new Tour({
+  steps: [
+  {
+    element: "#logo",
+    title: "<h3>MemeGen<h3>",
+    content: "WelCome to MemeGen, Lets have a small tour",
+  },
+  {
+    element: "#tr",
+    title: "MemeGen memes",
+    content: "These are some of the memes generated by MemeGen",
+  },
+  {
+    element: "#meme",
+    title: "Meme Generator",
+    content: "Inputs accepted only .jpg,.jpeg,.png. Here we have to generate the meme",
+  },
+  {
+    element: "#cn-button",
+    title: "Nav Bar",
+    content: "In this we have Documentation,github source code , issues and contact",
+  },
+  {
+    element: "#bookmark-this",
+    title: "Bookmark",
+    content: "Bookmark our page to acces easily",
+  }
+],
+backdrop: true,
+animation: true,
+});
+
+// Start the tour
+tour.start();
+  </script>
+  <script>
+    function scrollToElement(ele) {
+    $(window).scrollTop(ele.offset().top).scrollLeft(ele.offset().left);
+}
+scrollToElement($('#meme'));
+  </script>
+  
+  </body>
+</html>

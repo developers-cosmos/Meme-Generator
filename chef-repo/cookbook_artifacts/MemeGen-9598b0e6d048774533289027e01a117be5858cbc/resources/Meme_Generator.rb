@@ -16,7 +16,7 @@ action :create do
     # install initial requirements
     bash 'install_requirements' do
         code <<-EOH
-        
+
         sudo yum install git -y
         sudo yum install -y python3
         sudo yum install python3-pip

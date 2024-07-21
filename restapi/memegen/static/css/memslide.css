@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body, html{
+    height: 100%;
+  }
+  
+  [type=radio] {
+    display: none;
+  }
+  body::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 20px;
+	width:10px;
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(top,#008aff,#00ffe7);
+}
+
+body{
+	height: 100%;
+	background: #000;
+	color: #fff;
+}
+.github{
+    display: block;
+    position: absolute;
+    background-color: #110f0c;
+    border: 8px solid #eea236;
+    border-radius: 4px;
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    height: 50px;
+    width: 50px;
+    right: 0;
+    z-index: 1050;
+}
+#bookmark-this:hover {
+  background-color: #ec971f;
+  border: 1px solid #d58512;
+  text-decoration: none;
+}
+
+#bookmark-this:active {
+  background-color: #ec971f;
+  border: 1px solid #d58512;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.navbar {
+  font-family: Montserrat, sans-serif;
+  background-color: #2d2d301e;
+  font-size: 11px !important;
+  letter-spacing: 4px;
+  opacity: 0.9;
+}
+  
+  #slider {
+    height: 35vw;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  
+  #slider label {
+    margin: auto;
+    width: 40%;
+    height: 80%;
+    border-radius: 10px;
+    display: flex;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+    position: absolute;
+    left: 0; right: 0;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+  }
+  #slider img {
+    border-radius: 6px;
+  }
+  
+  #s1:checked ~ #slide4, #s2:checked ~ #slide5,
+  #s3:checked ~ #slide1, #s4:checked ~ #slide2,
+  #s5:checked ~ #slide3 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+  }
+  
+  #s1:checked ~ #slide5, #s2:checked ~ #slide1,
+  #s3:checked ~ #slide2, #s4:checked ~ #slide3,
+  #s5:checked ~ #slide4 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+  }
+  
+  #s1:checked ~ #slide1, #s2:checked ~ #slide2,
+  #s3:checked ~ #slide3, #s4:checked ~ #slide4,
+  #s5:checked ~ #slide5 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(0,0,0);
+  }
+  
+  #s1:checked ~ #slide2, #s2:checked ~ #slide3,
+  #s3:checked ~ #slide4, #s4:checked ~ #slide5,
+  #s5:checked ~ #slide1 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(15%,0,-100px);
+  }
+  
+  #s1:checked ~ #slide3, #s2:checked ~ #slide4,
+  #s3:checked ~ #slide5, #s4:checked ~ #slide1,
+  #s5:checked ~ #slide2 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+  }
+  
+  #slide1 { background: #272727 }
+  #slide2 { background: #272727 }
+  #slide3 { background: #272727 }
+  #slide4 { background: #272727 }
+  #slide5 { background: #272727 }
+
+.card{
+	position: relative;
+	width: 300px;
+	height: 320px;
+  display: flex;
+  justify-content: space-around;
+	align-items: center;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.caution{
+	bottom: -36px;
+  color: rgb(224, 111, 46);
+  background-color: transparent;
+	transition: .5s;
+}
+.note{
+	top: -20px;
+  color: rgb(224, 221, 46);
+  background-color: transparent;
+	border: 1px solid rgb(167, 67, 21);
+	padding: 8px 10px;
+	border-radius: 10px;
+	transition: .5s;
+}
+.c-image{
+  width:300px;
+  height:300px;
+  padding:5px;
+  justify-content: space-around;
+	border-radius: 10px;
+	transition: .5s;
+}
+.c-image img{
+  width:100%;
+  height:100%;
+	border-radius: 10px;
+	transition: .5s;
+}
+.more{
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+  color: #fff;
+  margin-bottom: 5px;
+  background-color: transparent;
+	text-decoration: none;
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	padding: 8px 20px;
+	border-radius: 30px;
+	transition: .5s;
+}
+.more:hover{
+	background: #272727;
+	border-color: #272727;
+}
+.card-1{
+	position: relative;
+	width: 350px;
+	height: 400px;
+  display: flex;
+  justify-content: space-around;
+	align-items: center;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.more-1{
+	bottom: -10px;
+	left: 80px;
+	transform: translateX(-50%);
+  color: #fff;
+  background-color: transparent;
+	text-decoration: none;
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	padding: 8px 20px;
+	border-radius: 30px;
+	transition: .5s;
+}
+.more-1:hover{
+	background: #272727;
+	border-color: #272727;
+}
+.note:hover{
+	background: #a74646;
+	border-color: #963232;
+}
+.liquid{
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	background: #4973ff;
+	top: 10;
+	left: -75px;
+	z-index: -1;
+	box-shadow: inset 0 0 50px rgba(0,0,0,.5);
+	transition: .5s;
+}
+.liquid:before,
+.liquid:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 200%;
+	height: 200%;
+	transform: translate(-50%,-65%);
+	transition: 1s ease-in-out;
+}
+.liquid:before{
+	background: rgba(20,20,20,1);
+	border-radius: 45%;
+	animation: wave 7s infinite linear;
+}
+.liquid:after{
+	background: rgba(20,20,20,.5);
+	border-radius: 40%;
+	animation: wave 7s infinite linear;
+}
+@keyframes wave{
+	0%{
+		transform: translate(-50%,-65%) rotate(0deg);
+	}
+	100%{
+		transform: translate(-50%,-65%) rotate(360deg);
+	}
+}
+.card:hover .liquid:before,
+.card:hover .liquid:after{
+	top: -30%;
+}
+@media screen and (max-width:1000px) {
+  #slider label {
+    margin: auto;
+    width: 500px;
+    height: 600px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0; right: 0;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+  }
+}
+@media screen and (max-width:800px) {
+  #slider label {
+    margin: auto;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0; right: 0;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+  }
+}
+@media screen and (max-width:540px) {
+  #slider label {
+    margin: auto;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0; right: 0;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+  }
+}
