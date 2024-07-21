@@ -1,0 +1,116 @@
+
+body
+{
+    background: linear-gradient(to right,#abbaab,#ffffff);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #fdc830,#f37335);
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    cursor:pointer ;
+    transition: all 0.3s ease-in-out;
+}
+
+.bar1,.bar2{
+    width: 50px;
+    height: 7px;
+    background-color: white;
+    transform: translate(-5px,10px) rotate(25deg);
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.bar2{
+    transform: translate(-5px,-7px) rotate(-25deg);
+    position: absolute;
+}
+
+.container div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container div i{
+    font-size: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.facebook, .instagram, .linkedin{
+     width: 20px;
+     height: 20px;
+     background-color: white;
+     border-radius: 50%;
+     position: absolute;
+     transition: all 0.3s ease-in-out;
+     transform: translate(15px,-18px)
+}
+
+.instagram{
+    transform: translateX(-20px);
+}
+
+.linkedin{
+    transform: translate(15px,18px);
+}
+
+.facebook.exp, .instagram.exp, .linkedin.exp{
+    transform: translate(80px,-80px);
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.facebook.exp:hover{
+    background-color: #4167b2;
+}
+
+.facebook.exp:hover i, .instagram.exp:hover i, .linkedin.exp:hover i{
+    color: black;
+}
+
+.instagram.exp{
+    transform: translateX(-100px);
+}
+
+.instagram.exp:hover{
+    background-color: #d40064;
+}
+
+.linkedin.exp{
+    transform: translate(80px,80px)
+}
+
+.linkedin.exp:hover{
+    background-color: #0274b3;
+}
+
+.bar1.exp, .bar2.exp{
+    transform: rotate(45deg);
+    width: 30px;
+    height: 5px;
+}
+
+.bar2.exp{
+    transform: rotate(-45deg);
+}
+
+.container.exp{
+    width:60px;
+    height:60px;
+}
+
+.container div i.exp{
+    opacity: 1;
+    font-size: 60px;
+}

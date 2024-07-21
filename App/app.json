@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "MemeGen",
+    "description": "No description",
+    "slug": "snack-468f8f5d-0b17-4678-8530-e287aedf5885",
+    "privacy": "unlisted",
+    "sdkVersion": "37.0.0",
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "icon": "https://d1wp6m56sqw74a.cloudfront.net/~assets/c9aa1be8a6a6fe81e20c3ac4106a2ebc",
+    "loading": {
+      "icon": "https://d1wp6m56sqw74a.cloudfront.net/~assets/c9aa1be8a6a6fe81e20c3ac4106a2ebc",
+      "hideExponentText": false
+    },
+    "packagerOpts": {
+      "assetExts": [
+        "ttf",
+        "mp4",
+        "otf",
+        "xml"
+      ],
+      "sourceExts": ["js", "jsx", "svg", "svgx"]
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
