@@ -13,8 +13,9 @@ import tensorflow as tf
 app = Flask(__name__)
 
 # Configuration
-app.config["UPLOAD_FOLDER"] = os.path.join(os.getenv("UPLOAD_FOLDER", "./static"), "inputs")
-app.config["RESULTS_FOLDER"] = os.path.join(app.config["UPLOAD_FOLDER"], "results")
+STATIC = os.getenv("UPLOAD_FOLDER", "./static")
+app.config["UPLOAD_FOLDER"] = os.path.join(STATIC, "inputs")
+app.config["RESULTS_FOLDER"] = os.path.join(STATIC, "results")
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 LABELS = ["happy", "disgust", "neutral", "sad", "fear", "anger", "surprise"]
