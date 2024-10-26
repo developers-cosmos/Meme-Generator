@@ -1,5 +1,5 @@
 Flask==3.0.3
-Werkzeug==3.0.3
+Werkzeug==3.0.6
 tensorflow==2.17.0
 numpy==1.26.4
 opencv_python==4.10.0.84
