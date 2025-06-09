@@ -11,7 +11,7 @@ def detectface(img):
     )
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-    if faces is ():
+    if faces is None or len(faces) == 0:
         return False
     for x, y, w, h in faces:
         roi_gray = img[y : y + h, x : x + w]
