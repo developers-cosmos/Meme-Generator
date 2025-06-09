@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 
 
-def lenghth(a):
+def length(a):
     s = len(a)
     if s < 12:
         return 36
@@ -36,7 +36,7 @@ def text_alignment(label, im):
         if len(a) == 1:
             org = 29 - len(a[0]) + 2, 230
             x, y = org
-            fontScale = lenghth(a[0])
+            fontScale = length(a[0])
             font = ImageFont.truetype("font.ttf", fontScale)
             # thin border
             text = a[0][:-1]
@@ -56,7 +56,7 @@ def text_alignment(label, im):
         elif len(a) == 2:
             org = 29 - len(a[0]) + 2, 7
             x, y = org
-            fontScale = lenghth(a[0])
+            fontScale = length(a[0])
             font = ImageFont.truetype("font.ttf", fontScale)
 
             # thin border
@@ -76,7 +76,7 @@ def text_alignment(label, im):
             im = cv2.cvtColor(np.array(pil_im), cv2.COLOR_RGB2BGR)
             org = 29 - len(a[1]) + 2, 230
             x, y = org
-            fontScale = lenghth(a[1])
+            fontScale = length(a[1])
             font = ImageFont.truetype("font.ttf", fontScale)
             # thin border
             text = a[1]
@@ -96,7 +96,7 @@ def text_alignment(label, im):
         elif len(a) == 3:
             org = 29 - len(a[0]) + 2, 7
             x, y = org
-            fontScale = lenghth(a[0])
+            fontScale = length(a[0])
             font = ImageFont.truetype("font.ttf", fontScale)
             # thin border
             text = a[0]
@@ -116,7 +116,7 @@ def text_alignment(label, im):
             im = cv2.cvtColor(np.array(pil_im), cv2.COLOR_RGB2BGR)
             org = 29 - len(a[1]) + 2, 210
             x, y = org
-            fontScale = lenghth(a[1])
+            fontScale = length(a[1])
             font = ImageFont.truetype("font.ttf", fontScale)
 
             # thin border
@@ -137,7 +137,7 @@ def text_alignment(label, im):
             org = 29 - len(a[2]) + 2, 239
             x, y = org
 
-            fontScale = lenghth(a[2])
+            fontScale = length(a[2])
             font = ImageFont.truetype("font.ttf", fontScale)
 
             # thin border
@@ -158,7 +158,7 @@ def text_alignment(label, im):
         else:
             org = 29 - len(a[0]) + 2, 7
             x, y = org
-            fontScale = lenghth(a[0])
+            fontScale = length(a[0])
             font = ImageFont.truetype("font.ttf", fontScale)
 
             # thin border
@@ -179,7 +179,7 @@ def text_alignment(label, im):
             im = cv2.cvtColor(np.array(pil_im), cv2.COLOR_RGB2BGR)
             org = 29 - len(a[1]) + 2, 40
             x, y = org
-            fontScale = lenghth(a[1])
+            fontScale = length(a[1])
             font = ImageFont.truetype("font.ttf", fontScale)
 
             # thin border
@@ -199,7 +199,7 @@ def text_alignment(label, im):
             im = cv2.cvtColor(np.array(pil_im), cv2.COLOR_RGB2BGR)
             org = 29 - len(a[2]) + 2, 220
             x, y = org
-            fontScale = lenghth(a[2])
+            fontScale = length(a[2])
             font = ImageFont.truetype("font.ttf", fontScale)
 
             # thin border
@@ -218,7 +218,7 @@ def text_alignment(label, im):
             im = cv2.cvtColor(np.array(pil_im), cv2.COLOR_RGB2BGR)
             org = 29 - len(a[3]) + 2, 250
             x, y = org
-            fontScale = lenghth(a[3])
+            fontScale = length(a[3])
             font = ImageFont.truetype("font.ttf", fontScale)
 
             # thin border
