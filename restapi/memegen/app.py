@@ -49,11 +49,13 @@ def detect_face(img):
     if len(faces) == 0:
         return False
     for x, y, w, h in faces:
-        roi_gray = img[y : y + h, x : x + w]
+        # Crop the detected face region from the grayscale image and
+        # prepare it for model inference.
+        roi = gray[y : y + h, x : x + w]
         cropped_img = np.expand_dims(
-            np.expand_dims(cv2.resize(roi_gray, (224, 224)), -1), 0
+            np.expand_dims(cv2.resize(roi, (224, 224)), -1), 0
         )
-        return roi_gray
+        return cropped_img
 
 
 def get_font_size(text):
@@ -151,9 +153,8 @@ def upload_file():
             img = add_text_to_image("noface", img)
         else:
             img = cv2.resize(img, (224, 224))
-            face_img = cv2.resize(face_img, (224, 224))
             interpreter = get_interpreter("models/memegen1.tflite")
-            results = predict_emotion(interpreter, LABELS, [face_img])
+            results = predict_emotion(interpreter, LABELS, face_img)
             dominant_emotion = max(results, key=results.get)
             img = add_text_to_image(dominant_emotion, img)
 
