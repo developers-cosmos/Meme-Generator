@@ -2,7 +2,9 @@ import io
 import os
 import json
 import unittest
-import apk
+import app
+
+IMAGES_DIR = os.path.join(os.path.dirname(__file__), "../../images")
 import cv2
 import numpy as np
 import xmlrunner
@@ -14,8 +16,8 @@ class TestDataObjects(unittest.TestCase):
     def setUpClass(self):
         "set up test fixtures"
         print("### Setting up flask server ###")
-        apk.app.testing = True
-        self.app = apk.app.test_client()
+        app.app.testing = True
+        self.app = app.app.test_client()
 
     @classmethod
     def tearDownClass(self):
@@ -28,7 +30,7 @@ class TestDataObjects(unittest.TestCase):
         test_url = addr + "/api"
         content_type = "image/jpeg"
         headers = {"content-type": content_type}
-        img = cv2.imread("me.jpg")
+        img = cv2.imread(os.path.join(IMAGES_DIR, "meme1.jpeg"))
         _, img_encoded = cv2.imencode(".jpg", img)
         response = self.app.post(test_url, data=img_encoded.tostring(), headers=headers)
         s = response.get_data(as_text=True)
@@ -43,7 +45,7 @@ class TestDataObjects(unittest.TestCase):
         test_url = addr + "/api"
         content_type = "image/jpeg"
         headers = {"content-type": content_type}
-        img = cv2.imread("me.jpeg")
+        img = cv2.imread(os.path.join(IMAGES_DIR, "meme2.jpeg"))
         _, img_encoded = cv2.imencode(".jpg", img)
         response = self.app.post(test_url, data=img_encoded.tostring(), headers=headers)
         s = response.get_data(as_text=True)
@@ -58,7 +60,7 @@ class TestDataObjects(unittest.TestCase):
         test_url = addr + "/api"
         content_type = "image/jpeg"
         headers = {"content-type": content_type}
-        img = cv2.imread("glove.png")
+        img = cv2.imread(os.path.join(IMAGES_DIR, "meme3.jpeg"))
         _, img_encoded = cv2.imencode(".jpg", img)
         response = self.app.post(test_url, data=img_encoded.tostring(), headers=headers)
         s = response.get_data(as_text=True)
@@ -72,7 +74,7 @@ class TestDataObjects(unittest.TestCase):
         test_url = addr + "/api"
         content_type = "image/jpeg"
         headers = {"content-type": content_type}
-        img = cv2.imread("glove.png")
+        img = cv2.imread(os.path.join(IMAGES_DIR, "meme3.jpeg"))
         _, img_encoded = cv2.imencode(".jpg", img)
         response = self.app.post(test_url, data=img_encoded.tostring(), headers=headers)
         s = response.get_data(as_text=True)
@@ -96,7 +98,7 @@ class TestDataObjects(unittest.TestCase):
         test_url = addr + "/api"
         content_type = "image/jpeg"
         headers = {"content-type": content_type}
-        img = cv2.imread("me.jpeg")
+        img = cv2.imread(os.path.join(IMAGES_DIR, "meme2.jpeg"))
         _, img_encoded = cv2.imencode(".jpg", img)
         response = self.app.post(test_url, data=img_encoded.tostring(), headers=headers)
         response1 = self.app.post(
