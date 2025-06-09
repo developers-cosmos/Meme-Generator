@@ -74,9 +74,9 @@ Kernel K is a set of learnable filters and is spatially small compared to the im
 
 Here is a very satisfying metaphor we found on the Internet about how CNN works:
 
- *If you were a detective and you are came across a large image or a picture in dark, how will you identify the image? You will use a           flashlight and scan across the entire image. This is exactly what we do in convolutional layer. Kernel K, which is a feature detector is equivalent of the flashlight on image I, and we are trying to detect feature and create multiple feature maps to help us identify or classify the image. We have multiple feature detector to help with things like edge detection, identifying different shapes, bends or different colors etc.*
+ *If you were a detective and you came across a large image or a picture in the dark, how will you identify the image? You will use a flashlight and scan across the entire image. This is exactly what we do in the convolutional layer. Kernel K, which is a feature detector, is the equivalent of the flashlight on image I, and we try to detect features and create multiple feature maps to help us identify or classify the image. We have multiple feature detectors to help with things like edge detection, identifying different shapes, bends or different colors, etc.*
 
-> CNN has several advantages over the conventional image classification methods, one of them being transational invariance which typically means that it identifies an object even if it is translated, rotated or slightly deformed.
+> CNN has several advantages over the conventional image classification methods, one of them being translational invariance which typically means that it identifies an object even if it is translated, rotated or slightly deformed.
 
 This was just a brief on CNN, it actually seems simple but in reality involves a lot of mathematical calculations and understanding of neural networks. If you want to know more about CNN, [click here.](https://towardsdatascience.com/simple-introduction-to-convolutional-neural-networks-cdf8d3077bac)
 _____________________________________________
